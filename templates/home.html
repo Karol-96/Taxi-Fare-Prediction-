@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Taxi Fare Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Taxi Fare Prediction</h1>
+    <form method="post" action="{{ url_for('predict') }}">
+        <label>Distance (in miles):</label>
+        <input type="number" name="distance" required><br>
+        <label>Time (in minutes):</label>
+        <input type="number" name="time" required><br>
+        <label>Passengers:</label>
+        <input type="number" name="passengers" required><br>
+        <label>Payment type:</label>
+        <select name="payment_type">
+            <option value="cash">Cash</option>
+            <option value="credit card">Credit Card</option>
+            <option value="other">Other</option>
+        </select><br>
+        <label>Weather Condition:</label>
+        <select name="weather_condition">
+            <option value="clear">Clear</option>
+            <option value="cloudy">Cloudy</option>
+            <option value="rainy">Rainy</option>
+        </select><br>
+        <label>Traffic Condition type:</label>
+        <select name="traffic_condition">
+            <option value="light">Light</option>
+            <option value="moderate">Moderate</option>
+            <option value="heavy">Heavy</option>
+        </select><br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
